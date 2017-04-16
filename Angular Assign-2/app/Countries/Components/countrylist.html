@@ -1,0 +1,44 @@
+
+
+<script src="index.js"></script>
+<div class="gridStyle" ng-grid="gridOptions"></div>
+
+<table *ngFor="let country of comments.geonames">
+            <td style="width:300px; padding:15px; border-bottom: 1px solid #333; cursor:pointer;"[routerLink]="['/country-detail', country.countryCode]">
+                <tr>
+                     {{country.countryName}}
+                </tr>
+            </td>
+            <td style="width:50px;padding:15px; border-bottom: 1px solid #333;">
+                <tr>
+                     {{country.countryCode}}
+                </tr>
+            </td>
+
+            <td style="width:150px; padding:15px; border-bottom: 1px solid #333;">
+                <tr>
+                     {{country.area}}
+                </tr>
+            </td>
+        <td style="width:150px; padding:15px; border-bottom: 1px solid #333;">
+                <tr>
+                     {{country.areaInSqKm}}
+                </tr>
+            </td>
+             <td style="width:150px; padding:15px; border-bottom: 1px solid #333;">
+                <tr>
+                     {{country.continent}}
+                </tr>
+            </td>
+            <td style="width:150px; padding:15px; border-bottom: 1px solid #333;">
+                <tr>
+                     {{country.capital}}
+                </tr>
+            </td>
+             <td style="width:150px; padding:15px; border-bottom: 1px solid #333;">
+                <tr>
+                     {{country.population}}
+                </tr>
+            </td>
+        </table>
+

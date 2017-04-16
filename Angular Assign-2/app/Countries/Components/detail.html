@@ -1,0 +1,101 @@
+<h1>Details</h1>
+
+<table *ngFor="let country of details.geonames">
+    <td>
+        <tr>
+      
+            
+    <td style="width:150px; padding:15px; font-style:initial;">
+        <tr>
+          CountryName   
+            </tr>
+    </td>
+    <td>
+        <tr>
+        {{country.countryName}}
+        </tr>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="width:150px; padding:15px; font-style:initial;">
+    <tr>
+        Flag
+    </tr>
+    </td>
+    <td>
+        <tr>
+            <img style="width:100px;" src="http://www.geonames.org/flags/x/{{country.countryCode | lowercase}}.gif" >
+        </tr>
+    </td>
+    </tr>
+
+    <tr>
+        <td style="width:150px; padding:15px; font-style:initial;">
+    <tr>
+        Capital
+    </tr>
+    </td>
+    <td>
+        <tr>
+            {{country.capital}}
+        </tr>
+    </td>
+
+    </tr>
+    <tr>
+        <td style="width:150px; padding:15px; font-style:initial;">
+    <tr>
+        Map
+    </tr>
+    </td>
+    <td>
+        <tr>
+            <img style="width:100px;" src="http://www.geonames.org/img/country/250/{{country.countryCode | uppercase}}.png" >
+        </tr>
+    </td>
+    </tr>
+
+    <tr>
+    <td style="width:150px; padding:15px; font-style:initial;"> 
+        <tr>
+        Population
+        </tr>
+        </td>
+        <td>
+        <tr>
+        {{country.population}}
+        </tr>
+        </td>
+</tr>
+
+<tr>
+        <td style="width:150px; padding:15px; font-style:initial;">
+        <tr>
+        Area
+        </tr>
+        </td>
+        <td>
+        <tr>
+        {{country.areaInSqKm}}
+        </tr>
+        </td>
+</tr>
+
+
+<tr>
+        <td style="width:150px; padding:15px; font-style:initial;">
+        <tr>
+        Neighbour
+        </tr>
+        </td>
+        <td>
+        <tr *ngFor="let neigh of neighbour.geonames" style="padding:15px; cursor: pointer;">
+        <a [routerLink]="['/country-detail', neigh.countryCode]">  {{neigh.countryName}} </a>
+        </tr>
+        </td>
+</tr>
+
+    </td>
+
+</table>
